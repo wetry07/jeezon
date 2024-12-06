@@ -1,5 +1,15 @@
 import { WebContainer } from '@webcontainer/api';
+import { WebContainer, auth } from '@webcontainer/api';
 
+async function initializeAuth() {
+    await auth.init({
+        clientId: 'wc_api_piak_ba1be487d3812b6def45646e2e7242fa',
+        scope: '', // Add appropriate scope here if needed
+    });
+    console.log('Authentication initialized');
+}
+
+initializeAuth();
 let webcontainerInstance;
 
 // Initialize WebContainer
